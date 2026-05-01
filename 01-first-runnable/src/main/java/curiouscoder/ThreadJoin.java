@@ -12,7 +12,7 @@ public class ThreadJoin {
                 try {
                     //when the application crashes/fails abruptly at the time if thread was sleeping
                     // then it throws Interrupted exception
-                    Thread.sleep(550);
+                    Thread.sleep(560);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -51,8 +51,6 @@ public class ThreadJoin {
             // it must wait; otherwise, execution order issues may occur.
             // To ensure proper sequencing, call join() on thread#1.
             // This makes the main thread wait until thread#1 completes before proceeding.
-            Thread.sleep(4000);
-            System.out.println("sleeping for 4 seconds main method");
 
             t1.join();
         } catch (InterruptedException e) {
