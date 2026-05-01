@@ -19,12 +19,11 @@ class Runnable2 implements Runnable {
     }
 }
 
-public class Main {
+public class RunnableInterface {
 
     static void main() {
         System.out.println("starting main thread.....");
 
-        System.out.println("======================================");
         new Thread(new Runnable1()).start();
         new Thread(new Runnable2()).start();
 
