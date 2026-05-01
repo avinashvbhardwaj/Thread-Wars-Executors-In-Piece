@@ -1,6 +1,6 @@
 package curiouscoder;
 
-class NormalWorker implements Runnable {
+class WorkerRunner implements Runnable {
 
     @Override
     public void run() {
@@ -14,7 +14,7 @@ class NormalWorker implements Runnable {
     }
 }
 
-class DaemonWorker implements Runnable {
+class DaemonRunner implements Runnable {
 
     @Override
     public void run() {
@@ -36,7 +36,7 @@ public class DaemonThread {
         // Java does NOT kill user (non-daemon / worker) threads automatically
         // Even if the main thread finishes, the application keeps running
         // until all user threads complete execution
-        new Thread(new NormalWorker()).start();
+        new Thread(new WorkerRunner()).start();
         // Daemon Thread:
         // - Runs in background (low priority service thread)
         // - Supports user threads (e.g., GC, housekeeping tasks)
@@ -53,7 +53,7 @@ public class DaemonThread {
         // Note:
         // If only daemon threads are left, JVM exits immediately
 
-        Thread thread = new Thread(new DaemonWorker());
+        Thread thread = new Thread(new DaemonRunner());
         thread.setDaemon(true);
         thread.start();
 
