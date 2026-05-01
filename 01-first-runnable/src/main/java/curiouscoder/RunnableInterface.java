@@ -6,7 +6,7 @@ class Runnable1 implements Runnable {
 
     @Override
     public void run() {
-        IntStream.range(1, 10).boxed().forEach((i) ->System.out.println("Runner1 : " + i));
+        IntStream.range(1, 10).boxed().forEach((i) -> System.out.println("Runner1 : " + i));
     }
 }
 
@@ -15,7 +15,7 @@ class Runnable2 implements Runnable {
 
     @Override
     public void run() {
-        IntStream.range(1, 10).boxed().forEach((i) ->System.out.println("Runner2 : " + i));
+        IntStream.range(1, 10).boxed().forEach((i) -> System.out.println("Runner2 : " + i));
     }
 }
 
