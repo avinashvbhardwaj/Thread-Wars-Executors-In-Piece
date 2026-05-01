@@ -43,15 +43,11 @@ class Runner2 extends Thread {
 public class ThreadClass {
 
     static void main() {
-        System.out.println("starting main thread.....");
-
-        var thread1 =  new Runner1();
-        var thread2 =  new Runner2();
+        var thread1 = new Runner1();
+        var thread2 = new Runner2();
 
         thread1.start();
         thread2.start();
-
-        System.out.println("ending main thread.....");
 
     }
 }
