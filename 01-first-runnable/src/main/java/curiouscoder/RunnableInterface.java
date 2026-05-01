@@ -10,7 +10,6 @@ class Runnable1 implements Runnable {
     }
 }
 
-
 class Runnable2 implements Runnable {
 
     @Override
@@ -22,13 +21,8 @@ class Runnable2 implements Runnable {
 public class RunnableInterface {
 
     static void main() {
-        System.out.println("starting main thread.....");
-
         new Thread(new Runnable1()).start();
         new Thread(new Runnable2()).start();
-
-        System.out.println("ending main thread.....");
-
     }
 
 }
