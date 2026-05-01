@@ -22,13 +22,6 @@ public class ThreadPriority {
 
     static void main() {
 
-        System.out.println(Thread.currentThread().getName());
-
-        // Prints thread priority (range: 1 to 10)
-        // Default = 5 (Thread.NORM_PRIORITY)
-        // Higher priority → more chance of getting CPU (not guaranteed)
-        System.out.println(Thread.currentThread().getPriority());
-
         var low = new Thread(new Task(), "Low Priority Thread");
         var normal = new Thread(new Task(), "Normal Priority Thread");
         var high = new Thread(new Task(), "High Priority Thread");
