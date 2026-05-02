@@ -5,11 +5,19 @@ public class SynchronizedBlock {
     private int counter1;
     private int counter2;
 
+    //Independent locks for each synchronized block
+    //Decoupling is important after understanding the problem
+    //Yet no thread is updating the same variable
+    //but Main object belongs to SynchronizedBlock
+    //Introduced two new Object for Thread lock purpose
+    private final Object lock1 = new Object();
+    private final Object lock2 = new Object();
+
     //It is not recommended to use synchronized keyword on method
     //because method has other part  of the code that does not need synchronization
     private void increment1() {
         //execute before operations
-        synchronized (this) {
+        synchronized (lock1) {
             counter1++;
         }
         //execute after operations
@@ -17,7 +25,7 @@ public class SynchronizedBlock {
 
     private void increment2() {
         //execute before operations
-        synchronized (this) {
+        synchronized (lock2) {
             counter2++;
         }
         //execute after operations
