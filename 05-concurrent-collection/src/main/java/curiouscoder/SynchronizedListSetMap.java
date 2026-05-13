@@ -1,6 +1,6 @@
 package curiouscoder;
 
-public class SynchronizedCollectionsMap {
+public class SynchronizedListSetMap {
 
     public static void main(String[] args) {
         synchronizedList();
